@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styling dasar romantis */
+@layer base {
+    body {
+        font-family: 'Poppins', 'Inter', sans-serif;
+    }
+
+    ::selection {
+        background-color: #fbcfe8;
+        color: #83274b;
+    }
+}
+
+/* Komponen reusable bertema glass morphism */
+@layer components {
+    .card-glass {
+        @apply bg-white/80 backdrop-blur-xl border border-rose-100 rounded-3xl shadow-lg p-5 space-y-4 transition-all duration-300 ease-in-out;
+    }
+
+    .btn-romantic {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-rose-300 via-rose-400 to-rose-500 text-white font-semibold shadow-md transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-rose-200;
+    }
+
+    .btn-romantic-secondary {
+        @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-rose-200 text-rose-600 bg-rose-50/70 shadow transition-all duration-300 ease-in-out hover:bg-rose-100 hover:shadow-lg;
+    }
+
+    .badge-soft {
+        @apply inline-flex items-center px-3 py-1 rounded-full bg-rose-100 text-rose-500 text-xs font-semibold uppercase tracking-wide;
+    }
+
+    .form-label {
+        @apply text-sm font-medium text-rose-700 tracking-wide;
+    }
+
+    .input-romantic {
+        @apply w-full rounded-2xl border border-rose-100 bg-white/90 px-4 py-3 text-rose-800 shadow-sm transition-all duration-300 ease-in-out focus:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-200 placeholder:text-rose-300;
+    }
+
+    .nav-link {
+        @apply flex items-center space-x-3 px-4 py-3 rounded-2xl text-rose-400 transition-all duration-300 ease-in-out hover:text-rose-900 hover:bg-rose-50/80 hover:shadow-lg hover:-translate-y-0.5;
+    }
+
+    .nav-link-active {
+        @apply bg-gradient-to-r from-rose-200 via-rose-300 to-rose-400 text-rose-900 font-semibold shadow-lg;
+    }
+
+    .range-romantic {
+        @apply w-full h-3 appearance-none rounded-full bg-rose-100 outline-none;
+        background-image: linear-gradient(90deg, #f9a8d4 0%, #f9a8d4 50%, #fde2e4 50%);
+        background-size: 200% 100%;
+        background-position: left center;
+    }
+}
+
+/* Slider styling khusus */
+.range-romantic::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #f4a8c6, #f59bb0);
+    box-shadow: 0 8px 16px rgba(244, 147, 172, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.range-romantic::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(244, 147, 172, 0.4);
+}
+
+.range-romantic::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border: none;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #f4a8c6, #f59bb0);
+    box-shadow: 0 8px 16px rgba(244, 147, 172, 0.3);
+    cursor: pointer;
+}
+
+/* Animasi romantis */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.12);
+    }
+    50% {
+        transform: scale(0.96);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.heartbeat-logo {
+    animation: heartbeat 3s infinite;
+}
+
+.heartbeat-tilt {
+    animation: fadeIn 0.6s ease-in-out, heartbeat 4s infinite;
+}
